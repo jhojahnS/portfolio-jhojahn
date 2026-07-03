@@ -1,11 +1,222 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const tecnologias = [
+  "Java",
+  "Spring Boot",
+  "FastAPI",
+  "PostgreSQL",
+  "Docker",
+  "GitHub Actions",
+  "AWS",
+  "Astro",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+];
+
+const proyectos = [
+  {
+    titulo: "TFG - Sistema de Gestión de Proyectos",
+    descripcion:
+      "Backend desarrollado con FastAPI para gestionar usuarios, proyectos, tareas y comentarios.",
+    tecnologias: ["FastAPI", "PostgreSQL", "JWT", "Docker"],
+  },
+  {
+    titulo: "NeoBank - Infraestructura y CI/CD",
+    descripcion:
+      "Automatización de infraestructura y despliegues usando Docker, GitHub Actions y servicios de AWS.",
+    tecnologias: ["AWS", "Docker", "GitHub Actions", "CloudFormation"],
+  },
+  {
+    titulo: "Portfolio Personal",
+    descripcion:
+      "Portfolio desarrollado con Astro, React, TypeScript y Tailwind CSS, ejecutable en local.",
+    tecnologias: ["Astro", "React", "TypeScript", "Tailwind"],
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Jhojahn Ramírez</title>
+  </head>
+
+  <body class="bg-black text-white">
+    <!-- HEADER / MENÚ -->
+    <header class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#inicio" class="text-lg font-bold">
+          Jhojahn<span class="text-blue-400">.</span>
+        </a>
+
+        <ul class="hidden gap-6 md:flex">
+          <li><a class="hover:text-blue-400" href="#inicio">Inicio</a></li>
+          <li><a class="hover:text-blue-400" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="hover:text-blue-400" href="#tecnologias">Tecnologías</a></li>
+          <li><a class="hover:text-blue-400" href="#proyectos">Proyectos</a></li>
+          <li><a class="hover:text-blue-400" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- INICIO -->
+<section id="inicio" class="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-24">
+  <div class="max-w-4xl">
+    <div class="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-blue-300 backdrop-blur">
+      Backend & DevOps Junior
+    </div>
+
+    <h1 class="text-6xl font-black leading-none tracking-tight md:text-8xl">
+      Hola, soy <br />
+      <span class="text-transparent bg-gradient-to-r from-white via-blue-200 to-blue-500 bg-clip-text">
+        Jhojahn Ramírez
+      </span>
+    </h1>
+
+    <p class="mt-8 max-w-2xl text-xl leading-8 text-gray-300">
+      Desarrollo APIs, automatizo despliegues y construyo soluciones con
+      Docker, CI/CD, AWS, FastAPI y Spring Boot.
+    </p>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a
+        href="#proyectos"
+        class="rounded-xl bg-blue-500 px-6 py-4 font-bold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-1 hover:bg-blue-600"
+      >
+        Ver proyectos
+      </a>
+
+      <a
+        href="#contacto"
+        class="rounded-xl border border-white/15 bg-white/5 px-6 py-4 font-bold text-white backdrop-blur transition hover:-translate-y-1 hover:border-blue-400 hover:text-blue-300"
+      >
+        Contactar
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 left-6 hidden text-xs uppercase tracking-[0.5em] text-gray-600 md:block">
+    Portfolio 2026
+  </div>
+</section>
+
+      <!-- SOBRE MÍ -->
+      <section id="sobre-mi" class="mx-auto max-w-6xl px-6 py-24">
+        <h2 class="mb-6 text-4xl font-bold">Sobre mí</h2>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          <p class="text-gray-300">
+            Soy desarrollador junior formado en Desarrollo de Aplicaciones Multiplataforma.
+            Me interesa especialmente el desarrollo backend, la automatización de despliegues
+            y la creación de soluciones usando tecnologías modernas.
+          </p>
+
+          <p class="text-gray-300">
+            He trabajado con APIs, bases de datos, Docker, GitHub Actions y servicios de AWS.
+            Actualmente estoy construyendo este portfolio con Astro, React, TypeScript y Tailwind CSS
+            para mostrar mis proyectos y mi evolución profesional.
+          </p>
+        </div>
+      </section>
+
+      <!-- TECNOLOGÍAS -->
+      <section id="tecnologias" class="border-y border-white/10 bg-white/5">
+        <div class="mx-auto max-w-6xl px-6 py-24">
+          <h2 class="mb-6 text-4xl font-bold">Tecnologías</h2>
+
+          <p class="mb-8 max-w-2xl text-gray-300">
+            Estas son algunas de las tecnologías que he utilizado en proyectos académicos,
+            prácticas y proyectos personales.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            {
+              tecnologias.map((tecnologia) => (
+                <span class="rounded-full border border-white/10 bg-black px-4 py-2 text-sm text-gray-200">
+                  {tecnologia}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section id="proyectos" class="mx-auto max-w-6xl px-6 py-24">
+        <h2 class="mb-6 text-4xl font-bold">Proyectos</h2>
+
+        <p class="mb-10 max-w-2xl text-gray-300">
+          Algunos proyectos que representan mi experiencia en backend, DevOps y desarrollo web.
+        </p>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          {
+            proyectos.map((proyecto) => (
+              <article class="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:border-blue-400">
+                <h3 class="mb-3 text-xl font-bold">{proyecto.titulo}</h3>
+
+                <p class="mb-5 text-sm text-gray-300">
+                  {proyecto.descripcion}
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                  {proyecto.tecnologias.map((tecnologia) => (
+                    <span class="rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-300">
+                      {tecnologia}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="border-t border-white/10 bg-white/5">
+        <div class="mx-auto max-w-6xl px-6 py-24">
+          <h2 class="mb-6 text-4xl font-bold">Contacto</h2>
+
+          <p class="mb-8 max-w-2xl text-gray-300">
+            Puedes contactar conmigo para oportunidades como desarrollador backend junior,
+            DevOps junior o prácticas/proyectos relacionados con desarrollo web.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="mailto:tu-email@gmail.com"
+              class="rounded-lg bg-blue-500 px-5 py-3 font-semibold text-white hover:bg-blue-600"
+            >
+              Enviar email
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              class="rounded-lg border border-white/20 px-5 py-3 font-semibold hover:border-blue-400 hover:text-blue-400"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="https://github.com/"
+              target="_blank"
+              class="rounded-lg border border-white/20 px-5 py-3 font-semibold hover:border-blue-400 hover:text-blue-400"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 px-6 py-6 text-center text-sm text-gray-400">
+      © 2026 Jhojahn Ramírez. Portfolio desarrollado con Astro, React y Tailwind CSS.
+    </footer>
+  </body>
+</html>
