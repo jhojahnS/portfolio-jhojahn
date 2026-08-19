@@ -1,0 +1,52 @@
+---
+const tecnologias = [
+  "Java",
+  "Spring Boot",
+  "FastAPI",
+  "PostgreSQL",
+  "Docker",
+  "GitHub Actions",
+  "AWS",
+  "CloudFormation",
+  "Astro",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+];
+---
+
+<!-- TECNOLOGÍAS -->
+<section id="tecnologias" class="content-section section-band" data-section>
+  <div class="section-shell">
+    <div class="section-heading" data-reveal>
+      <span class="section-number">02</span>
+
+      <div>
+        <p class="section-kicker">Stack</p>
+        <h2>Tecnologías</h2>
+      </div>
+    </div>
+
+    <div class="technologies-layout">
+      <p class="technologies-intro" data-reveal>
+        Herramientas que he utilizado en proyectos académicos,
+        prácticas profesionales y proyectos personales.
+      </p>
+
+      <div class="technology-cloud stagger-list">
+        {
+          tecnologias.map((tecnologia, index) => (
+            <span
+              class="technology-pill"
+              data-reveal
+              style={`--item-index:${index}`}
+            >
+              <i></i>
+              {tecnologia}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

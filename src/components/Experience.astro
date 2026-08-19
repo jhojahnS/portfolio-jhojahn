@@ -1,0 +1,63 @@
+---
+// Experiencia y formación relevante
+const experiencias = [
+  {
+    periodo: "2026",
+    tipo: "Experiencia profesional",
+    puesto: "Prácticas DevOps",
+    empresa: "EPAM Neoris · Proyecto NeoBank",
+    descripcion:
+      "Automatización de infraestructura y despliegues en AWS. Trabajo con Docker, GitHub Actions, CloudFormation, EC2, RDS, S3, CloudFront, ECR y Lambda.",
+    tecnologias: ["AWS", "Docker", "GitHub Actions", "CloudFormation"],
+  },
+  {
+    periodo: "2026",
+    tipo: "Formación",
+    puesto: "Técnico Superior en DAM",
+    empresa: "Desarrollo de Aplicaciones Multiplataforma",
+    descripcion:
+      "Formación orientada a desarrollo de software, bases de datos y aplicaciones multiplataforma. TFG centrado en un backend con FastAPI, PostgreSQL, JWT y Docker.",
+    tecnologias: ["Java", "Python", "SQL", "FastAPI"],
+  },
+];
+---
+
+<!-- EXPERIENCIA -->
+      <section id="experiencia" class="section-shell content-section" data-section>
+        <div class="section-heading" data-reveal>
+          <span class="section-number">03</span>
+          <div>
+            <p class="section-kicker">Recorrido</p>
+            <h2>Experiencia</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          {
+            experiencias.map((experiencia) => (
+              <article class="timeline-item" data-reveal>
+                <div class="timeline-marker"></div>
+
+                <div class="timeline-period">
+                  <span>{experiencia.periodo}</span>
+                  <small>{experiencia.tipo}</small>
+                </div>
+
+                <div class="timeline-content">
+                  <p class="timeline-company">{experiencia.empresa}</p>
+                  <h3>{experiencia.puesto}</h3>
+                  <p>{experiencia.descripcion}</p>
+
+                  <div class="mini-tags">
+                    {experiencia.tecnologias.map((tecnologia) => (
+                      <span>{tecnologia}</span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>

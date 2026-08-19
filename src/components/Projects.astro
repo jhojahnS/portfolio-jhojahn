@@ -1,0 +1,104 @@
+---
+// Proyectos que se renderizan automáticamente
+const proyectos = [
+  {
+    numero: "01",
+    categoria: "Backend",
+    titulo: "TFG · Sistema de Gestión de Proyectos",
+    descripcion:
+      "Backend desarrollado con FastAPI para gestionar usuarios, proyectos, tareas y comentarios, con autenticación JWT, roles y persistencia en PostgreSQL.",
+    tecnologias: ["FastAPI", "PostgreSQL", "JWT", "Docker"],
+    github: "",
+    demo: "",
+  },
+  {
+    numero: "02",
+    categoria: "DevOps",
+    titulo: "NeoBank · Infraestructura y CI/CD",
+    descripcion:
+      "Infraestructura en AWS y pipelines de CI/CD para automatizar validación, construcción y despliegue de backend, frontend y procesos batch.",
+    tecnologias: ["AWS", "Docker", "GitHub Actions", "CloudFormation"],
+    github: "",
+    demo: "",
+  },
+  {
+    numero: "03",
+    categoria: "Web",
+    titulo: "Portfolio Personal",
+    descripcion:
+      "Portfolio personal diseñado para presentar mi perfil, experiencia y proyectos con una estética técnica inspirada en backend, cloud y automatización.",
+    tecnologias: ["Astro", "React", "TypeScript", "Tailwind CSS"],
+    github: "",
+    demo: "",
+  },
+];
+---
+
+<!-- PROYECTOS -->
+      <section id="proyectos" class="content-section section-band" data-section>
+        <div class="section-shell">
+          <div class="section-heading" data-reveal>
+            <span class="section-number">04</span>
+            <div>
+              <p class="section-kicker">Trabajo</p>
+              <h2>Proyectos</h2>
+            </div>
+          </div>
+
+          <p class="projects-intro" data-reveal>
+            Una selección de proyectos que representan mi experiencia
+            en backend, DevOps y desarrollo web.
+          </p>
+
+          <div class="projects-grid">
+            {
+              proyectos.map((proyecto) => (
+                <article class="project-card" data-reveal data-tilt-card>
+                  <div class="project-preview">
+                    <span class="project-number">{proyecto.numero}</span>
+                    <span class="project-category">{proyecto.categoria}</span>
+
+                    <div class="preview-terminal">
+                      <div class="terminal-top">
+                        <i></i><i></i><i></i>
+                      </div>
+                      <div class="terminal-line long"></div>
+                      <div class="terminal-line medium"></div>
+                      <div class="terminal-line short"></div>
+                      <div class="terminal-line accent"></div>
+                    </div>
+                  </div>
+
+                  <div class="project-body">
+                    <h3>{proyecto.titulo}</h3>
+                    <p>{proyecto.descripcion}</p>
+
+                    <div class="mini-tags">
+                      {proyecto.tecnologias.map((tecnologia) => (
+                        <span>{tecnologia}</span>
+                      ))}
+                    </div>
+
+                    {
+                      (proyecto.github || proyecto.demo) && (
+                        <div class="project-links">
+                          {proyecto.github && (
+                            <a href={proyecto.github} target="_blank" rel="noreferrer">
+                              GitHub ↗
+                            </a>
+                          )}
+                          {proyecto.demo && (
+                            <a href={proyecto.demo} target="_blank" rel="noreferrer">
+                              Demo ↗
+                            </a>
+                          )}
+                        </div>
+                      )
+                    }
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
