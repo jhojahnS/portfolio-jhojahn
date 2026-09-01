@@ -722,6 +722,7 @@ body::after {
   display: grid;
   grid-template-columns: 0.55fr 1.45fr;
   gap: 90px;
+  align-items: start;
 }
 
 .technologies-intro {
@@ -730,6 +731,36 @@ body::after {
   line-height: 1.8;
 }
 
+/*tecnologías*/
+/* Contenedor de todas las categorías */
+.technology-categories {
+  display: grid;
+  gap: 34px;
+}
+
+/* Cada categoría: Backend, DevOps, etc. */
+.technology-category {
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.technology-category:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Título de cada categoría */
+.technology-category-title {
+  margin: 0 0 16px;
+  color: #e5e7eb;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Lista de tecnologías */
 .technology-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -737,6 +768,7 @@ body::after {
   align-content: flex-start;
 }
 
+/* Etiqueta individual */
 .technology-pill {
   display: inline-flex;
   padding: 12px 15px;
@@ -757,6 +789,7 @@ body::after {
 .technology-pill i {
   width: 5px;
   height: 5px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: #475569;
   transition:
