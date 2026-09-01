@@ -1,23 +1,57 @@
 ---
-const tecnologias = [
-  "Java",
-  "Spring Boot",
-  "FastAPI",
-  "PostgreSQL",
-  "Docker",
-  "GitHub Actions",
-  "AWS",
-  "CloudFormation",
-  "Astro",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
+const categorias = [
+  {
+    nombre: "Backend",
+    tecnologias: [
+      "Java",
+      "Spring Boot",
+      "Python",
+      "FastAPI",
+    ],
+  },
+  {
+    nombre: "DevOps & Cloud",
+    tecnologias: [
+      "Docker",
+      "GitHub Actions",
+      "AWS",
+      "CloudFormation",
+    ],
+  },
+  {
+    nombre: "Bases de datos",
+    tecnologias: [
+      "PostgreSQL",
+      "SQL",
+    ],
+  },
+  {
+    nombre: "Frontend",
+    tecnologias: [
+      "Astro",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    nombre: "Herramientas",
+    tecnologias: [
+      "Git",
+      "GitHub",
+    ],
+  },
 ];
 ---
 
 <!-- TECNOLOGÍAS -->
-<section id="tecnologias" class="content-section section-band" data-section>
+<section
+  id="tecnologias"
+  class="content-section section-band"
+  data-section
+>
   <div class="section-shell">
+
     <div class="section-heading" data-reveal>
       <span class="section-number">02</span>
 
@@ -28,25 +62,55 @@ const tecnologias = [
     </div>
 
     <div class="technologies-layout">
+
       <p class="technologies-intro" data-reveal>
-        Herramientas que he utilizado en proyectos académicos,
-        prácticas profesionales y proyectos personales.
+        Tecnologías y herramientas que he utilizado en proyectos académicos,
+        prácticas profesionales y proyectos personales, principalmente
+        orientadas al desarrollo backend y DevOps.
       </p>
 
-      <div class="technology-cloud stagger-list">
+      <div class="technology-categories">
+
         {
-          tecnologias.map((tecnologia, index) => (
-            <span
-              class="technology-pill"
+          categorias.map((categoria, categoriaIndex) => (
+
+            <div
+              class="technology-category"
               data-reveal
-              style={`--item-index:${index}`}
+              style={`--item-index:${categoriaIndex}`}
             >
-              <i></i>
-              {tecnologia}
-            </span>
+
+              <h3 class="technology-category-title">
+                {categoria.nombre}
+              </h3>
+
+              <div class="technology-cloud stagger-list">
+
+                {
+                  categoria.tecnologias.map((tecnologia, index) => (
+
+                    <span
+                      class="technology-pill"
+                      data-reveal
+                      style={`--item-index:${index}`}
+                    >
+                      <i></i>
+                      {tecnologia}
+                    </span>
+
+                  ))
+                }
+
+              </div>
+
+            </div>
+
           ))
         }
+
       </div>
+
     </div>
+
   </div>
 </section>

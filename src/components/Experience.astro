@@ -1,6 +1,6 @@
 ---
 // Experiencia y formación relevante
-const experiencias = [
+const trayectoria = [
   {
     periodo: "2026",
     tipo: "Experiencia profesional",
@@ -36,22 +36,22 @@ const experiencias = [
           <div class="timeline-line" aria-hidden="true"></div>
 
           {
-            experiencias.map((experiencia) => (
+            trayectoria.map((trayectory) => (
               <article class="timeline-item" data-reveal>
                 <div class="timeline-marker"></div>
 
                 <div class="timeline-period">
-                  <span>{experiencia.periodo}</span>
-                  <small>{experiencia.tipo}</small>
+                  <span>{trayectory.periodo}</span>
+                  <small>{trayectory.tipo}</small>
                 </div>
 
                 <div class="timeline-content">
-                  <p class="timeline-company">{experiencia.empresa}</p>
-                  <h3>{experiencia.puesto}</h3>
-                  <p>{experiencia.descripcion}</p>
+                  <p class="timeline-company">{trayectory.empresa}</p>
+                  <h3>{trayectory.puesto}</h3>
+                  <p>{trayectory.descripcion}</p>
 
                   <div class="mini-tags">
-                    {experiencia.tecnologias.map((tecnologia) => (
+                    {trayectory.tecnologias.map((tecnologia) => (
                       <span>{tecnologia}</span>
                     ))}
                   </div>
