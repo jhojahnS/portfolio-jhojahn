@@ -1037,11 +1037,31 @@ body::after {
   padding: 25px;
 }
 
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
 .project-body h3 {
   margin: 0;
   font-size: 20px;
   line-height: 1.3;
   letter-spacing: -0.025em;
+}
+
+.project-status {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #93c5fd;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .project-body > p {

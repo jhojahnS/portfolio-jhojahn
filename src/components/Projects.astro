@@ -8,6 +8,8 @@ const proyectos = [
     descripcion:
       "Backend desarrollado con FastAPI para gestionar usuarios, proyectos, tareas y comentarios, con autenticación JWT, roles y persistencia en PostgreSQL.",
     tecnologias: ["FastAPI", "PostgreSQL", "JWT", "Docker"],
+    frontend_github: "https://github.com/Irenecg22/GestionTareas.git",
+    backend_github: "https://github.com/jhojahnS/gestion-proyectos-tareas-Backend.git",
     github: "",
     demo: "",
   },
@@ -18,7 +20,10 @@ const proyectos = [
     descripcion:
       "Infraestructura en AWS y pipelines de CI/CD para automatizar validación, construcción y despliegue de backend, frontend y procesos batch.",
     tecnologias: ["AWS", "Docker", "GitHub Actions", "CloudFormation"],
+    frontend_github: "",
+    backend_github: "",
     github: "",
+    
     demo: "",
   },
   {
@@ -28,6 +33,47 @@ const proyectos = [
     descripcion:
       "Portfolio personal diseñado para presentar mi perfil, experiencia y proyectos con una estética técnica inspirada en backend, cloud y automatización.",
     tecnologias: ["Astro", "React", "TypeScript", "Tailwind CSS"],
+    frontend_github: "",
+    backend_github: "",
+    github: "https://github.com/jhojahnS/portfolio-jhojahn.git",
+    demo: "",
+  },
+  {
+    numero: "04",
+    categoria: "Automatización",
+    titulo: "FolderFlow",
+    estado: "Planificado",
+    descripcion:
+      "Script de automatización para organizar archivos en carpetas según su extensión, utilizando Python y la biblioteca pathlib.",
+    tecnologias: ["Python", "pathlib", "Automatización"],
+    frontend_github: "",
+    backend_github: "",
+    github: "",
+    demo: "",
+  },
+  {
+    numero: "05",
+    categoria: "DevOps",
+    titulo: "RepoSync",
+    estado: "Planificado",
+    descripcion:
+      "Herramienta para sincronizar repositorios Git automáticamente, implementada con Python y la biblioteca GitPython.",
+    tecnologias: ["Python", "GitPython"],
+    frontend_github: "",
+    backend_github: "",
+    github: "",
+    demo: "",
+  },
+  {
+    numero: "06",
+    categoria: "Backend / Data",
+    titulo: "StockPilot",
+    estado: "Planificado",
+    descripcion:
+      "Aplicación backend para gestionar productos, inventario y movimientos de stock, orientada a practicar diseño de APIs, persistencia de datos y lógica de negocio.",
+    tecnologias: ["Python", "FastAPI", "PostgreSQL"],
+    frontend_github: "",
+    backend_github: "",
     github: "",
     demo: "",
   },
@@ -70,7 +116,15 @@ const proyectos = [
                   </div>
 
                   <div class="project-body">
-                    <h3>{proyecto.titulo}</h3>
+                    <div class="project-title-row">
+                      <h3>{proyecto.titulo}</h3>
+
+                      {proyecto.estado && (
+                        <span class="project-status">
+                          {proyecto.estado}
+                        </span>
+                      )}
+                    </div>
                     <p>{proyecto.descripcion}</p>
 
                     <div class="mini-tags">
@@ -80,13 +134,23 @@ const proyectos = [
                     </div>
 
                     {
-                      (proyecto.github || proyecto.demo) && (
+                      (proyecto.frontend_github || proyecto.backend_github || proyecto.github ||proyecto.demo) && (
                         <div class="project-links">
                           {proyecto.github && (
                             <a href={proyecto.github} target="_blank" rel="noreferrer">
                               GitHub ↗
                             </a>
                           )}
+                          {proyecto.frontend_github && (
+                            <a href={proyecto.frontend_github} target="_blank" rel="noreferrer">
+                              Frontend GitHub ↗
+                            </a>
+                          )}
+                          {proyecto.backend_github && (
+                            <a href={proyecto.backend_github} target="_blank" rel="noreferrer">
+                              Backend GitHub ↗
+                            </a>
+                          )} 
                           {proyecto.demo && (
                             <a href={proyecto.demo} target="_blank" rel="noreferrer">
                               Demo ↗
